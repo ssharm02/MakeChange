@@ -10,6 +10,7 @@ Error handling is utilized to capture and throw bad input such as alphabetical c
 ![alt text](https://i.imgur.com/90UPA7K.png)
 
 Another example
+
 ![alt text](https://i.imgur.com/wJPXwHY.png)
 
 
