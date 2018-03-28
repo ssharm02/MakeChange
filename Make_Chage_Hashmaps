@@ -1,0 +1,47 @@
+package makechangehashmap;
+import java.util.*; 
+/**
+ *
+ * @author sarth
+ */
+public class MakeChangeHashMap {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        
+        System.out.println("Please Enter amount of change ");
+        
+        int amount = input.nextInt();
+        
+        Map<Integer, Integer> coin = new HashMap<>();
+        coin.put(25, 0);
+        coin.put(10, 0);
+        coin.put(5, 0);
+        coin.put(1, 0);
+        
+        ArrayList<Integer> coinFace = new ArrayList<>();
+        coinFace.addAll(coin.keySet());
+        Collections.sort(coinFace);
+        Collections.reverse(coinFace);
+        //System.out.println(coinFace);
+        
+        for(Integer key : coinFace) {
+            int counterCoins = 0;
+            for (int i = 0; i <= amount; i++) {
+                if (i==key) {
+                    amount -= i;
+                    //start loop over again
+                    i=0;
+                    counterCoins++;
+                    //add appropriate coins to the key value pair 
+                    coin.put(key, counterCoins);
+                }
+            }
+        }
+        System.out.println(Collections.singleton(coin));
+    }
+    
+}
